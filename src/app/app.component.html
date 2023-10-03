@@ -1,0 +1,14 @@
+<p-toolbar>
+    <div class="p-toolbar-group-start">
+        <p-menubar [model]="items">
+            <ng-template pTemplate="start">
+                <img src="https://adsinfo.me/assets/images/completo2.png" alt="Logo" class="logo">
+            </ng-template>
+        </p-menubar>
+    </div>
+    <div class="p-toolbar-group-end">
+        <b>{{this.title.getSubtitulo()}}</b>
+    </div>
+</p-toolbar>
+
+<router-outlet></router-outlet>
