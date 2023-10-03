@@ -3,15 +3,15 @@ import { MessageService } from 'primeng/api';
 import { TitleService } from 'src/app/core/title/title.service';
 
 @Component({
-  selector: 'app-init',
-  templateUrl: './init.component.html',
-  styleUrls: ['./init.component.sass']
+  selector: 'app-palabras',
+  templateUrl: './palabras.component.html',
+  styleUrls: ['./palabras.component.sass']
 })
-export class InitComponent {
+export class PalabrasComponent {
   keywords: string[] = [];
 
   constructor(public title: TitleService, private messageService: MessageService) {
-    title.setSubtitulo("Palabras clave");
+    title.setSubtitulo("Sicoes Palabras clave");
   }
 
   validateKeywords() {

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InitComponent } from './shared/init/init.component';
+import { PalabrasComponent } from './shared/palabras/palabras.component';
 
 const routes: Routes = [
-  { path: '', component: InitComponent }
+  { path: 'alertas-sicoes', component: PalabrasComponent }
 ];
 
 @NgModule({
