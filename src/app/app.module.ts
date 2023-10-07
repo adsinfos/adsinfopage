@@ -13,6 +13,8 @@ import { ChipsModule } from 'primeng/chips';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     ToolbarModule,
     ChipsModule,
     ToastModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { TitleService } from 'src/app/core/title/title.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-palabras',
@@ -9,8 +10,9 @@ import { TitleService } from 'src/app/core/title/title.service';
 })
 export class PalabrasComponent {
   keywords: string[] = [];
+  fin: string = "";
 
-  constructor(public title: TitleService, private messageService: MessageService) {
+  constructor(public title: TitleService, private messageService: MessageService, private http: HttpClient) {
     title.setSubtitulo("Sicoes Palabras clave");
   }
 
@@ -26,7 +28,16 @@ export class PalabrasComponent {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Debes agregar de 1 a 5 palabras, para agregar una presiona enter' });
       return;
     }
-    const link = `https://t.me/idotodobot?start=sicnot_${this.keywords.join('_')}`;
-    window.open(link, '_blank');
+
+    const jsonData = JSON.stringify({ words: this.keywords });
+    
+    this.http.post('https://url.adsinfo.me/json.php', jsonData, { responseType: 'text' }).subscribe(response => {
+      const base64String = btoa(response);
+      const link = `https://t.me/@idotodobot?start=sicnot_${base64String}`;
+      window.open(link, '_blank');
+    }, error => {
+      console.error('Hubo un error al consumir la API', error);
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Error al consumir la API' });
+    });
   }
 }
