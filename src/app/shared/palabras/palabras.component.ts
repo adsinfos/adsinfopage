@@ -33,7 +33,7 @@ export class PalabrasComponent {
     
     this.http.post('https://url.adsinfo.me/json.php', jsonData, { responseType: 'text' }).subscribe(response => {
       const base64String = btoa(response);
-      const link = `https://t.me/@idotodobot?start=sicnot_${base64String}`;
+      const link = `https://t.me/idotodobot?start=sicnot_${base64String}`;
       window.open(link, '_blank');
     }, error => {
       console.error('Hubo un error al consumir la API', error);
