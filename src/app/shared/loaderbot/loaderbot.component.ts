@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class LoaderbotComponent {
   ngOnInit() {
-    window.open("http://botsform.adsinfo.me/#/alertas-sices-nav", "_blank");
+    window.open("http://botsform.adsinfo.me/#/alertas-sices-nav", "_system");
   }
 }
