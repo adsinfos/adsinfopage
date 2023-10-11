@@ -14,12 +14,14 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderbotComponent } from './shared/loaderbot/loaderbot.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PalabrasComponent
+    PalabrasComponent,
+    LoaderbotComponent
   ],
   imports: [
     BrowserModule,
