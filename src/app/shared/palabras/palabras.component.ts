@@ -15,7 +15,34 @@ export class PalabrasComponent {
   constructor(public title: TitleService, private messageService: MessageService, private http: HttpClient) {
     title.setSubtitulo("Sicoes Palabras clave");
   }
+  agregar(tipo: string) {
+    switch (tipo) {
+      case 'info':
+        this.keywords = ["desarrollo de software",
+          "desarrollo de un",
+          "sistema Informatico",
+          "sistemas",
+          "programacion"];
+        break;
+      case 'audi':
+        this.keywords = ["auditoria",
+          "auditor",
+          "financiera",
+          "seguridad",
+          "auditar"];
+        break;
+      case 'cons':
+        this.keywords = ["construccion",
+          "mantenimiento",
+          "levantamiento",
+          "limpieza",
+          "civil"];
+        break;
+      default:
+        break;
+    }
 
+  }
   validateKeywords() {
     if (this.keywords.length > 5) {
       this.keywords.pop();
@@ -30,7 +57,7 @@ export class PalabrasComponent {
     }
 
     const jsonData = JSON.stringify({ words: this.keywords });
-    
+
     this.http.post('https://url.adsinfo.me/json.php', jsonData, { responseType: 'text' }).subscribe(response => {
       const base64String = btoa(response);
       const link = `https://t.me/idotodobot?start=sicnot_${base64String}`;

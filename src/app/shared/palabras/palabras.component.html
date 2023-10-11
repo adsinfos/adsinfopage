@@ -1,8 +1,46 @@
 <div class="friendly-page">
     <h2>Agrega palabras clave</h2>
-    <p-chips [(ngModel)]="keywords" (onAdd)="validateKeywords()" (onRemove)="validateKeywords()"></p-chips>
+    <p-chips [(ngModel)]="keywords" pTooltip="Ingrese enter para agregar" (onAdd)="validateKeywords()"
+        (onRemove)="validateKeywords()"></p-chips>
     <div class="button-container">
         <p-button label="Enviar" (click)="generateLink()"></p-button>
+
     </div>
+    <div class="button-container">
+        No te preucupes de mayusculas, minusculas o acentos son indiferentes
+    </div>
+    <div class="panel-container">
+        <p-panel header="Sugerencia para Informatico" [toggleable]="true" [collapsed]="true">
+            <p>
+                desarrollo de software,
+                desarrollo de un,
+                sistema Informatico,
+                sistemas,
+                programacion
+            </p>
+            <p-button label="Agregar" (click)="agregar('info')"></p-button>
+        </p-panel>
+        <p-panel header="Sugerencia para Auditor" [toggleable]="true" [collapsed]="true">
+            <p>
+                auditoria,
+                auditor,
+                financiera,
+                seguridad,
+                auditar
+            </p>
+            <p-button label="Agregar" (click)="agregar('audi')"></p-button>
+        </p-panel>
+        <p-panel header="Sugerencia para Civil" [toggleable]="true" [collapsed]="true">
+            <p>
+                construccion,
+                mantenimiento,
+                levantamiento,
+                limpieza,
+                civil
+            </p>
+            <p-button label="Agregar" (click)="agregar('cons')"></p-button>
+        </p-panel>
+    </div>
+
     <p-toast></p-toast>
 </div>
