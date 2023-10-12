@@ -18,7 +18,9 @@ export class PalabrasComponent implements OnInit {
     title.setSubtitulo("Sicoes Palabras clave");
   }
   ngOnInit(): void {
-    this.messages = [{ severity: 'info', summary: '', detail: 'No te preucupes de mayusculas, minusculas o acentos son indiferentes' }];
+    this.messages = [
+      { severity: 'info', summary: '', detail: 'No te preucupes de mayusculas, minusculas o acentos son indiferentes' }
+    ];
   }
   agregar(tipo: string) {
     switch (tipo) {

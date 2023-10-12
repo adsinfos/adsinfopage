@@ -6,7 +6,7 @@
         <p-button label="Enviar" (click)="generateLink()"></p-button>
 
     </div>
-
+    <p-divider></p-divider>
     <div class="card">
         <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
     </div>
@@ -22,6 +22,7 @@
             </p>
             <p-button label="Agregar" (click)="agregar('info')"></p-button>
         </p-panel>
+        <p-divider></p-divider>
         <p-panel header="Sugerencia para Auditor" [toggleable]="true" [collapsed]="true">
             <p>
                 auditoria,
@@ -32,6 +33,7 @@
             </p>
             <p-button label="Agregar" (click)="agregar('audi')"></p-button>
         </p-panel>
+        <p-divider></p-divider>
         <p-panel header="Sugerencia para Civil" [toggleable]="true" [collapsed]="true">
             <p>
                 construccion,
