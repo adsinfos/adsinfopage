@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderbotComponent } from './shared/loaderbot/loaderbot.component';
 import { PanelModule } from 'primeng/panel';
-
+import { MessagesModule } from 'primeng/messages';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,8 @@ import { PanelModule } from 'primeng/panel';
     ToastModule,
     FormsModule,
     HttpClientModule,
-    PanelModule
+    PanelModule,
+    MessagesModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

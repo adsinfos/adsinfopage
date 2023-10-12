@@ -6,9 +6,11 @@
         <p-button label="Enviar" (click)="generateLink()"></p-button>
 
     </div>
-    <div class="button-container">
-        No te preucupes de mayusculas, minusculas o acentos son indiferentes
+
+    <div class="card">
+        <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
     </div>
+
     <div class="panel-container">
         <p-panel header="Sugerencia para Informatico" [toggleable]="true" [collapsed]="true">
             <p>

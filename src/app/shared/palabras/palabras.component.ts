@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { TitleService } from 'src/app/core/title/title.service';
 import { HttpClient } from '@angular/common/http';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-palabras',
   templateUrl: './palabras.component.html',
   styleUrls: ['./palabras.component.sass']
 })
-export class PalabrasComponent {
+export class PalabrasComponent implements OnInit {
   keywords: string[] = [];
   fin: string = "";
+  messages: Message[] = [];
 
   constructor(public title: TitleService, private messageService: MessageService, private http: HttpClient) {
     title.setSubtitulo("Sicoes Palabras clave");
+  }
+  ngOnInit(): void {
+    this.messages = [{ severity: 'info', summary: '', detail: 'No te preucupes de mayusculas, minusculas o acentos son indiferentes' }];
   }
   agregar(tipo: string) {
     switch (tipo) {
