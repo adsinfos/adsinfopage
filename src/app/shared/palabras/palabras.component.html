@@ -3,8 +3,7 @@
     <p-chips [(ngModel)]="keywords" pTooltip="Ingrese enter para agregar" (onAdd)="validateKeywords()"
         (onRemove)="validateKeywords()"></p-chips>
     <div class="button-container">
-        <p-button label="Enviar" (click)="generateLink()"></p-button>
-
+        <p-button [disabled]="disabledbutton" label="Enviar" (click)="generateLink()"></p-button>
     </div>
     <p-divider></p-divider>
     <div class="card">
