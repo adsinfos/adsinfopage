@@ -48,6 +48,13 @@ export class PalabrasComponent implements OnInit {
           "limpieza",
           "civil"];
         break;
+      case 'textil':
+        this.keywords = ["vestimenta",
+          "ropa",
+          "textil",
+          "estampado",
+          "pintura"];
+        break;
       default:
         break;
     }
