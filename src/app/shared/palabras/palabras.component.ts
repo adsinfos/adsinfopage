@@ -14,14 +14,17 @@ export class PalabrasComponent implements OnInit {
   fin: string = "";
   messages: Message[] = [];
   disabledbutton: boolean = false;
+
   constructor(public title: TitleService, private messageService: MessageService, private http: HttpClient) {
     title.setSubtitulo("Sicoes Palabras clave");
   }
+
   ngOnInit(): void {
     this.messages = [
       { severity: 'info', summary: '', detail: 'No te preucupes de mayusculas, minusculas o acentos son indiferentes' }
     ];
   }
+
   agregar(tipo: string) {
     switch (tipo) {
       case 'info':
@@ -50,15 +53,18 @@ export class PalabrasComponent implements OnInit {
     }
 
   }
+
   validateKeywords() {
     if (this.keywords.length > 5) {
       this.keywords.pop();
       this.messageService.add({ severity: 'warn', summary: 'Atención', detail: 'Solo puedes agregar 5 palabras clave maximo' });
     }
   }
+
   generate() {
     if (this.keywords.length < 1 || this.keywords.length > 5) {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Debes agregar de 1 a 5 palabras, para agregar una presiona enter' });
+      this.disabledbutton = false;
       return;
     }
     const jsonData = JSON.stringify({ words: this.keywords });
@@ -76,10 +82,12 @@ export class PalabrasComponent implements OnInit {
     });
 
   }
+
   generateLink() {
     this.disabledbutton = true;
     setTimeout(() => {
       this.generate();
     }, 500);
   }
+
 }
