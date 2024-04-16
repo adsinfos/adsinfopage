@@ -18,7 +18,7 @@ export class AppComponent {
     this.items = [
       {
         label: 'Home',
-        url: 'https://adsinfo.me',
+        url: 'https://infobots.org',
       },
       {
         label: 'Crear alertas Sicoes',

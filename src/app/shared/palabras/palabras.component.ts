@@ -75,7 +75,7 @@ export class PalabrasComponent implements OnInit {
       return;
     }
     const jsonData = JSON.stringify({ words: this.keywords });
-    this.http.post('https://url.adsinfo.me/json.php', jsonData, { responseType: 'text' }).subscribe(response => {
+    this.http.post('https://adsbot.rf.gd/json.php', jsonData, { responseType: 'text' }).subscribe(response => {
       const base64String = btoa(response);
       const link = `https://t.me/idotodobot?start=sicnot_${base64String}`;
       window.open(link, '_blank');
