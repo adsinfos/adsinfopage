@@ -20,16 +20,6 @@ export class PalabrasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let valor = sessionStorage.getItem("token");
-    console.log(valor);
-    console.log("entro a palabras");
-    if (!valor) {
-      const randomNumber = Math.random().toString(); // Convert randomNumber to a string
-      sessionStorage.setItem("token", randomNumber);
-      window.location.href = "https://adsbot.rf.gd/carga.php";
-    } else {
-      sessionStorage.removeItem("token");
-    }
 
     this.messages = [
       { severity: 'info', summary: '', detail: 'No te preucupes de mayusculas, minusculas o acentos son indiferentes' }
