@@ -9,6 +9,7 @@ export class LoaderbotComponent {
 
   ngOnInit() {
     let valor = sessionStorage.getItem("token");
+    console.log(valor);
     if (valor != null) {
       const randomNumber = Math.random().toString(); // Convert randomNumber to a string
       sessionStorage.setItem("token", randomNumber);
