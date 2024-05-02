@@ -8,15 +8,6 @@ import { Component } from '@angular/core';
 export class LoaderbotComponent {
 
   ngOnInit() {
-    let valor = sessionStorage.getItem("token");
-    console.log(valor);
-    if (valor != null) {
-      const randomNumber = Math.random().toString(); // Convert randomNumber to a string
-      sessionStorage.setItem("token", randomNumber);
-      window.location.href = "https://adsbot.rf.gd/carga.php";
-    } else {
-      sessionStorage.removeItem("token");
-      window.location.href = "/assets/redirect.html";
-    }
+    window.location.href = "/assets/redirect.html";
   }
 }
